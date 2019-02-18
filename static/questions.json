@@ -1,0 +1,208 @@
+[
+  {
+    "question": "You are on the bridge of death who is waiting for you.",
+    "answers": [
+      "satan",
+      "odin",
+      "thor"
+    ],
+    "correct_answer": "satan",
+    "image": "metal.jpg"
+  },
+  {
+    "question": "You have three sons, who are they.",
+    "answers": [
+      "The fierce",
+      "The black",
+      "The wicked",
+      "All of the above"
+    ],
+    "correct_answer": "All of the above",
+    "image": "metal2.jpg"
+  },
+  {
+    "question": "What are you doing with your three sons ",
+    "answers": [
+      "Drink ale",
+      "Ride down your enemies",
+      "Kill your enemies with power",
+      "All of the above"
+    ],
+    "correct_answer": "Ride down your enemies",
+    "image": "metal3jpg.jpg"
+  },
+  {
+    "question": "If you were to die, on which part of the day you would.",
+    "answers": [
+      "night",
+      "noon",
+      "dawn",
+      "midnight"
+    ],
+    "correct_answer": "dawn",
+    "image": "metal4.jpg"
+  },
+  {
+    "question": "Where the kings of metal are going.",
+    "answers": [
+      "to town",
+      "to Odin's Hall",
+      "to Valhalla",
+      "to victory"
+    ],
+    "correct_answer": "to town",
+    "image": "metal5.jpg"
+  },
+  {
+    "question": "From what is your heart made of.",
+    "answers": [
+      "from steel",
+      "from iron",
+      "from gold",
+      "from stone"
+    ],
+    "correct_answer": "from steel",
+    "image": "metal6.jpg"
+  },
+  {
+    "question": "What brought us the crown and the ring",
+    "answers": [
+      "Prominence",
+      "The King",
+      "Odin",
+      "Thor"
+    ],
+    "correct_answer": "Prominence",
+    "image": "metal7.jpg"
+  },
+  {
+    "question": "If you were to do something while killing, what would it be.",
+    "answers": [
+      "Drinking beer",
+      "Drink the blood of your enemies",
+      "Hail"
+    ],
+    "correct_answer": "Hail",
+    "image": "metal8.jpg"
+  },
+  {
+    "question": "How many are the metal kings",
+    "answers": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correct_answer": "4",
+    "image": "metal9.jpg"
+  },
+  {
+    "question": "What awaits in the sky like a raven.",
+    "answers": [
+      "Odin",
+      "Blood",
+      "Death",
+      "Fire",
+      "Blood and Death"
+    ],
+    "correct_answer": "Blood and Death",
+    "image": "metal10.jpeg"
+  },
+  {
+    "question": "You are calling your brothers. From where you do that ?",
+    "answers": [
+      "Odin's Hall",
+      "Valhalla",
+      "Valley of the kings"
+    ],
+    "correct_answer": "Valley of the kings",
+    "image": "metal11.jpeg"
+  },
+  {
+    "question": "What was taken by the will.",
+    "answers": [
+      "Blood and death",
+      "Power and dominion",
+      "The crown and the ring"
+    ],
+    "correct_answer": "Power and dominion",
+    "image": "image12.jpg"
+  },
+  {
+    "question": "By which right you can hail and kill.",
+    "answers": [
+      "Odin's call",
+      "Divine",
+      "Power",
+      "Glory"
+    ],
+    "correct_answer": "Divine",
+    "image": "metal13.jpg"
+  },
+  {
+    "question": "You have a dream to be a king, what you should be first.",
+    "answers": [
+      "A warrior",
+      "A man",
+      "A king of metal",
+      "A father"
+    ],
+    "correct_answer": "A man",
+    "image": "metal14.jpg"
+  },
+  {
+    "question": " Where Manowar live.",
+    "answers": [
+      "In a fortress",
+      "On the road",
+      "In Valhalla",
+      "In Odi's Hall"
+    ],
+    "correct_answer": "On the road",
+    "image": "metal15.jpg"
+  },
+  {
+    "question": "What our proud soldiers hold in hand.",
+    "answers": [
+      "Sword and shield",
+      "Mace and chain",
+      "Great Axe",
+      "The Manowar Sword"
+    ],
+    "correct_answer": "Mace and chain",
+    "image": "metal18.jpg"
+  },
+  {
+    "question": "What all women should be.",
+    "answers": [
+      "Slaves",
+      "Valkyries",
+      "Queens",
+      "Amazons"
+    ],
+    "correct_answer": "Slaves",
+    "image": "metal16.jpg"
+  },
+  {
+    "question": "What Manowar do while other bands play.",
+    "answers": [
+      "Kill",
+      "Play",
+      "Rock",
+      "Ride"
+    ],
+    "correct_answer": "Kill",
+    "image": "metal17.jpg"
+  },
+  {
+    "question": "You are Thor. What do you crush on your way.",
+    "answers": [
+      "Your enemies",
+      "The infidels",
+      "The giants",
+      "All of the above"
+    ],
+    "correct_answer": "The infidels",
+    "image": "manowar18.jpg"
+  }
+]
