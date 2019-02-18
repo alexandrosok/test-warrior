@@ -109,7 +109,8 @@
                                 class="headline grey lighten-2"
                                 primary-title
                         >
-                            This app is shared between friends.
+                            This app is shared between friends
+                            and it is a false detector.
                             <br/>
                             Enter you stuff so all your friends know
                             what a koulouri you are.
@@ -180,8 +181,8 @@
                 target: null,
                 clicked: false,
                 counter: 0,
-                counterEnd: 19,
-                status: window.localStorage.getItem('end-new'),
+                counterEnd: 22,
+                status: window.localStorage.getItem('end-mew'),
                 resultMessage: window.localStorage.getItem('warrior-result-new'),
                 rules: {
                     required: value => !!value || 'Required.',
@@ -194,11 +195,9 @@
             }
         },
         beforeMount() {
-
             if (!this.status) {
                 this.emailDialog = true
             }
-
         },
         methods: {
             confirm() {
@@ -216,15 +215,29 @@
                 this.counter = this.counter + 1
                 if (this.counter === this.counterEnd) {
 
-                    if (this.score >= 15) {
-                        this.resultMessage = 'You were okey , but you still suck. Leave The fucking hall'
-                    }
-                    if (this.score === 18) {
+                    if (this.score === 22) {
                         this.resultMessage = 'Hail true Manowarrior'
                     }
-                    if (this.score <= 14) {
-                        this.resultMessage = 'You are a whimp and a poser. Leave the fucking hall'
+                    if (this.score >= 15 || this.score <= 21) {
+                        this.resultMessage = 'You were okey , but you still suck. Leave The fucking hall'
                     }
+                    if (this.score <= 14) {
+                        this.resultMessage = 'You are a wimp and a poser. Leave the fucking hall'
+                    }
+
+                    let settings = {
+                        "async": true,
+                        "crossDomain": true,
+                        "url": `https://manowarrior.dungeonmastering.net/API/final.php?email=${this.email}&name=${this.name}&score=${this.score}`,
+                        "method": "POST",
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "cache-control": "no-cache",
+                        }
+                    }
+                    this.$http(settings).then((response) => {
+                        console.log(response)
+                    })
 
                     window.localStorage.setItem('end-mew', true)
                     window.localStorage.setItem('warrior-result-new', this.resultMessage)
