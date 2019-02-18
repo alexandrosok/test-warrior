@@ -204,5 +204,38 @@
     ],
     "correct_answer": "The infidels",
     "image": "manowar18.jpg"
+  },
+  {
+    "question": "You said you would return, and here you are. What you bring with you.",
+    "answers": [
+      "Destruction and suffering",
+      "Destruction suffering and pain",
+      "Suffering and pain",
+      "Destruction and suffering"
+    ],
+    "correct_answer": "Destruction suffering and pain",
+    "image": "metal19.jpg"
+  },
+  {
+    "question": "What they shall do in the final hour.",
+    "answers": [
+      "Surrender",
+      "Run to the hills",
+      "Confess before they die",
+      "All the above"
+    ],
+    "correct_answer": "Confess before they die",
+    "image": "metal20.jpg"
+  },
+  {
+    "question": "What the gods of war will feel",
+    "answers": [
+      "my sword",
+      "the power of my sword",
+      "my chain in hand",
+      "my power"
+    ],
+    "correct_answer": "the power of my sword",
+    "image": "metal21.jpg"
   }
 ]

@@ -126,6 +126,11 @@
                                             v-model="name"
                                             label="Name"
                                     ></v-text-field>
+                                    Hooman Detector
+                                    <v-text-field
+                                            v-model="hooman"
+                                            label="Type hooman if you are a hooman"
+                                    ></v-text-field>
                                 </v-flex>
                             </v-flex>
                         </v-card-text>
@@ -154,90 +159,105 @@
 
 <script>
 
-  import data from '../../static/questions'
+    import data from '../../static/questions'
 
-  export default {
-    name: 'Main',
-    data () {
-      return {
-        data,
-        score: 0,
-        selection: false,
-        dialog: false,
-        confirmSelection: false,
-        emailDialog: false,
-        answer: null,
-        email: null,
-        finalDialog: false,
-        name: null,
-        index: null,
-        target: null,
-        clicked: false,
-        counter: 0,
-        counterEnd: 19,
-        status: window.localStorage.getItem('end'),
-        resultMessage: window.localStorage.getItem('warrior-result'),
-        rules: {
-          required: value => !!value || 'Required.',
-          counter: value => value.length <= 20 || 'Max 20 characters',
-          email: value => {
-            const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-            return pattern.test(value) || 'Invalid e-mail.'
-          }
+    export default {
+        name: 'Main',
+        data() {
+            return {
+                data,
+                score: 0,
+                selection: false,
+                dialog: false,
+                confirmSelection: false,
+                emailDialog: false,
+                answer: null,
+                email: null,
+                finalDialog: false,
+                name: null,
+                index: null,
+                hooman: null,
+                target: null,
+                clicked: false,
+                counter: 0,
+                counterEnd: 19,
+                status: window.localStorage.getItem('end-new'),
+                resultMessage: window.localStorage.getItem('warrior-result-new'),
+                rules: {
+                    required: value => !!value || 'Required.',
+                    counter: value => value.length <= 20 || 'Max 20 characters',
+                    email: value => {
+                        const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                        return pattern.test(value) || 'Invalid e-mail.'
+                    }
+                }
+            }
+        },
+        beforeMount() {
+
+            if (!this.status) {
+                this.emailDialog = true
+            }
+
+        },
+        methods: {
+            confirm() {
+                this.dialog = false
+                let target = document.querySelector('#answer_' + this.index)
+                if (this.answer === data[this.index].correct_answer) {
+                    target.parentNode.parentNode.style.backgroundColor = 'green'
+                    this.score = this.score + 1
+                }
+                else {
+                    target.parentNode.parentNode.style.backgroundColor = 'red'
+                }
+                target.parentNode.parentNode.parentNode.classList.add('disabled')
+
+                this.counter = this.counter + 1
+                if (this.counter === this.counterEnd) {
+
+                    if (this.score >= 15) {
+                        this.resultMessage = 'You were okey , but you still suck. Leave The fucking hall'
+                    }
+                    if (this.score === 18) {
+                        this.resultMessage = 'Hail true Manowarrior'
+                    }
+                    if (this.score <= 14) {
+                        this.resultMessage = 'You are a whimp and a poser. Leave the fucking hall'
+                    }
+
+                    window.localStorage.setItem('end-mew', true)
+                    window.localStorage.setItem('warrior-result-new', this.resultMessage)
+                    this.finalDialog = true
+                }
+            },
+            submitAnswer(event, index) {
+                this.dialog = true
+                this.index = index
+                this.answer = event
+            },
+            submitEmail() {
+                if (this.hooman === 'hooman') {
+                    if (this.rules.email(this.email) && this.name) {
+                        let settings = {
+                            "async": true,
+                            "crossDomain": true,
+                            "url": `https://manowarrior.dungeonmastering.net/API/manager.controller.php?email=${this.email}&name=${this.name}`,
+                            "method": "POST",
+                            "headers": {
+                                "Content-Type": "application/json",
+                                "cache-control": "no-cache",
+                            }
+                        }
+                        this.$http(settings).then((response) => {
+                            console.log(response)
+                        })
+                    }
+                    this.emailDialog = false
+                }
+            }
         }
-      }
-    },
-    beforeMount () {
-
-      if (!this.status) {
-        this.emailDialog = true
-      }
-
-    },
-    methods: {
-      confirm () {
-        this.dialog = false
-        let target = document.querySelector('#answer_' + this.index)
-        if (this.answer === data[this.index].correct_answer) {
-          target.parentNode.parentNode.style.backgroundColor = 'green'
-          this.score = this.score + 1
-        }
-        else {
-          target.parentNode.parentNode.style.backgroundColor = 'red'
-        }
-        target.parentNode.parentNode.parentNode.classList.add('disabled')
-
-        this.counter = this.counter + 1
-        if (this.counter === this.counterEnd) {
-
-          if (this.score >= 15) {
-            this.resultMessage = 'You were okey , but you still suck. Leave The fucking hall'
-          }
-          if (this.score === 18) {
-            this.resultMessage = 'Hail true Manowarrior'
-          }
-          if (this.score <= 14) {
-            this.resultMessage = 'You are a whimp and a poser. Leave the fucking hall'
-          }
-
-          window.localStorage.setItem('end', true)
-          window.localStorage.setItem('warrior-result', this.resultMessage)
-          this.finalDialog = true
-        }
-      },
-      submitAnswer (event, index) {
-        this.dialog = true
-        this.index = index
-        this.answer = event
-      },
-      submitEmail () {
-        if (this.rules.email(this.email) && this.name) {
-          console.log(this.email, this.name)
-
-        }
-      }
     }
-  }
 </script>
 
 <style>
