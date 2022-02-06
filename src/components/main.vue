@@ -195,9 +195,9 @@
             }
         },
         beforeMount() {
-            if (!this.status) {
-                this.emailDialog = true
-            }
+            // if (!this.status) {
+            //     this.emailDialog = true
+            // }
         },
         methods: {
             confirm() {
@@ -216,10 +216,10 @@
                 if (this.counter === this.counterEnd) {
 
                     if (this.score === 22) {
-                        this.resultMessage = 'Hail true Manowarrior'
+                        this.resultMessage = 'Hail Manowarrior'
                     }
                     if (this.score >= 15 || this.score <= 21) {
-                        this.resultMessage = 'You were okey , but you still suck. Leave The fucking hall'
+                        this.resultMessage = 'You SUCK. Leave The fucking hall'
                     }
                     if (this.score <= 14) {
                         this.resultMessage = 'You are a wimp and a poser. Leave the fucking hall'
